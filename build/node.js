@@ -144,6 +144,7 @@ GradientParser.stringify = (function() {
       }
 
       if (element instanceof Array) {
+        if(typeof result === 'undefined') result = [];
         return visitor.visit_array(element, result);
       } else if (element.type) {
         var nodeVisitor = visitor['visit_' + element.type];
